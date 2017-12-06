@@ -25,4 +25,5 @@ var config = {
 };
 
 var twitter = new Twitter(config);
-twitter.getHomeTimeline({count: '10'}, error, success); // return home fimeline.
+var tweets = twitter.getHomeTimeline({count: '1'}, error, success); // return home fimeline.
+
