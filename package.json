@@ -14,5 +14,14 @@
     "mongodb": "^3.0.0-rc0",
     "twitter": "^1.7.1",
     "twitter-node-client": "0.0.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedmansor/zappy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mohamedmansor/zappy/issues"
+  },
+  "homepage": "https://github.com/mohamedmansor/zappy#readme"
 }
