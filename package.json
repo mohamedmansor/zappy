@@ -1,0 +1,28 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^3.14.2",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.0-rc0",
+    "twit": "^2.2.9",
+    "twitter": "^1.7.1",
+    "twitter-node-client": "0.0.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedmansor/zappy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mohamedmansor/zappy/issues"
+  },
+  "homepage": "https://github.com/mohamedmansor/zappy#readme"
+}
