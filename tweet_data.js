@@ -1,35 +1,39 @@
-var Twitter = require('twitter-node-client').Twitter;
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/zappy";
-
-var error = function(err, response, body){
-    console.log('ERROR [%s]', err);
-};
-
-var success = function(data){
-    console.log('Data [%s]', data);
-};
-//Get this data from your twitter apps dashboard
-var config = {
-    "consumerKey": "VRfs5d3Mifdp3w3kDhlHDruMT",
-    "consumerSecret": "xRmQflKlKniXh8zX0728Nz4xOfJGibzHTHE7Udjt3Z0jn4cPCP",
-    "accessToken": "937716455554125825-LwiqsafHPDE3fIHH6z5OTSZUNdrVsgq",
-    "accessTokenSecret": "OuXlBV00UxouNhoHXILqCU3NAVVDhBJ3icPbqiV3NXvmE",
-    "callBackUrl": ""
-};
-var twitter = new Twitter(config);
-var tweets = twitter.getHomeTimeline({count: '1'}, error, success); // return home fimeline.
-
+var url = "mongodb://localhost:27017/mydb";
+// insert one
 // MongoClient.connect(url, function(err, db){
 //     if (err) throw err;
-//     db.collection("zapppy").insertMany(tweets, function(err, res){
+//     var myobj = {name:"mohamed", address: "Cairo"};
+//     db.collection("customers").insertOne(myobj, function(err, res){
 //         if (err) throw err;
-//         console.log("Collection Created and tweets stored !");
+//         console.log('1 document inserted.');
 //         db.close();
 //     });
 // });
-MongoClient.connect(url, function(err, database){
-    const mydb = database.db('mydb');
-    mydb.collection('tweets');
-    mydb.close();
+
+// insert many
+MongoClient.connect(url, function(err, db){
+    if (err) throw err;
+    var myobj = [
+        { name: 'John', address: 'Highway 71'},
+        { name: 'Peter', address: 'Lowstreet 4'},
+        { name: 'Amy', address: 'Apple st 652'},
+        { name: 'Hannah', address: 'Mountain 21'},
+        { name: 'Michael', address: 'Valley 345'},
+        { name: 'Sandy', address: 'Ocean blvd 2'},
+        { name: 'Betty', address: 'Green Grass 1'},
+        { name: 'Richard', address: 'Sky st 331'},
+        { name: 'Susan', address: 'One way 98'},
+        { name: 'Vicky', address: 'Yellow Garden 2'},
+        { name: 'Ben', address: 'Park Lane 38'},
+        { name: 'William', address: 'Central st 954'},
+        { name: 'Chuck', address: 'Main Road 989'},
+        { name: 'Viola', address: 'Sideway 1633'}
+    ];
+    db.collection("customers").insertMany(myobj, function(err, res){
+        if(err) throw err;
+        console.log('Number of documents inserted : ' + res.insertedCount);
+        // console.log(res.insertedCount)
+        db.close();
+    });
 });

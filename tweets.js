@@ -11,9 +11,10 @@ var error = function(err, response, body){
 };
 
 var success = function(data){
-    for (var i=0; i<data.lenght; i++){
-        console.log('Data [%s]', data[i]);
-    }
+    console.log(data)
+    // for (var i=0; i<data.lenght; i++){
+    //     console.log('Data [%s]', data[i]);
+    // }
 };
 
 
@@ -28,10 +29,10 @@ var config = {
 
 var twitter = new Twitter(config);
 
-var parameters = {
-    q: 'node',
-    count : 2
-}
+// var parameters = {
+//     q: 'node',
+//     count : 2
+// }
 
 var tweets = twitter.getUserTimeline({ screen_name: 'FictionFone', count: '1'}, error, success);
 

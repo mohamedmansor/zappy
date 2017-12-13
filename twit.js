@@ -14,11 +14,11 @@ var param = {
     count: 1
 };
 T.get('search/tweets', param, function(err, data, response){
-    console.log(data.statuses[0].text);
+    console.log(data.statuses);
 });
 
 // posting tweet
-// var tweet_param = { status: 'first tweet from #Node_js' };
+// var tweet_param = { status: 'Hello From Elemnts office' };
 // T.post('statuses/update', tweet_param,function(err, data, response){
 //     console.log(data.text)
 // });
