@@ -17,6 +17,8 @@ T.get('search/tweets', param, function(err, data, response){
     console.log(data.statuses);
 });
 
+// module.exports = T;
+
 // posting tweet
 // var tweet_param = { status: 'Hello From Elemnts office' };
 // T.post('statuses/update', tweet_param,function(err, data, response){

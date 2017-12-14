@@ -13,7 +13,7 @@ var T = new Twit({
 // gettigng tweets:
 var param = {
     q: 'mongo',
-    count: 1
+    count: 5
 };
 var tweets = T.get('search/tweets', param, function(err, data, response){
     console.log(data.statuses[0].text);
