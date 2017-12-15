@@ -5,18 +5,19 @@ const app = express();
 // app.get('/', (req, res) => res.send('hello world'));
 // app.get('/', (req, res) => res.send('slack'))
 
-var env = require('./env_slack');
+var elack_env = require('./env_slack');
 var Slack = require('slack-node');
 var Twit = require('twit');
+var tw_env = require('./env_twitter');
 
-apiToken = env.API_TOKEN;
+apiToken = elack_env.API_TOKEN;
 slack = new Slack(apiToken);
 
 var T = new Twit({
-    consumer_key:'VRfs5d3Mifdp3w3kDhlHDruMT',
-    consumer_secret:'xRmQflKlKniXh8zX0728Nz4xOfJGibzHTHE7Udjt3Z0jn4cPCP',
-    access_token:'937716455554125825-LwiqsafHPDE3fIHH6z5OTSZUNdrVsgq',
-    access_token_secret:'OuXlBV00UxouNhoHXILqCU3NAVVDhBJ3icPbqiV3NXvmE',
+    consumer_key: tw_env.consumer_key,
+    consumer_secret: tw_env.consumer_secret,
+    access_token: tw_env.access_token,
+    access_token_secret: tw_env.access_token_secret,
 });
 
 // gettigng tweets:
